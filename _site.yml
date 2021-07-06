@@ -1,0 +1,12 @@
+name: "Math488_Project"
+title: "The Factors to Look Out for that Rack up the Price of AirBnb Listings in NYC"
+description: |
+  The Factors to Look Out for that Rack up the Price of AirBnb Listings in NYC
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
