@@ -1,6 +1,6 @@
 ## Factors to Look Out for that Rack up the Price of AirBnb Listings in NYC
 
-```{r,include=FALSE}
+```{r}
 library(tidyverse)
 library(data.table)
 library(leaflet)
@@ -16,7 +16,7 @@ Using a sample of almost 50,000 AirBnb listings across all 5 boroughs in NYC in 
 
 As college students who love to travel, price is a huge consideration for us when choosing where to stay in a new city, and we are sure that many of you feel the same way. There is definitely a correlation between price and the location of each AirBnb listing in New York. As you can imagine, the more expensive the AirBnb is, the “better” the neighborhood that is located in. And the other way around as well; the cheaper the AirBnb, the “worse” the location it is in.
 
-```{r, echo=FALSE}
+```{r}
 AB_NYC_2019 %>%
   ggplot() + geom_boxplot(aes(x = price, y = borough, color = room_type)) + 
   coord_cartesian(xlim =c(0, 500)) + labs(x = "Price" , y = "Borough" , title = "Price of Listings by Borough and Room Type in 2019")
@@ -36,7 +36,7 @@ Personally, we have never heard of "shared rooms" before we conducted this analy
 Are you ever looking for the perfect place to stay and one of the listings catches your eye with just one word? Well, whether you realize it or not, the language used to describe AirBnb listings could possibly have more of an effect than you know. We compared the average and median prices of AirBnb listings in Manhattan that contained the word "cozy," and listings that contained the word "luxury," and compared both of those to the average and median prices of all of the listings in Manhattan.
 
 	
-```{r, echo=FALSE}
+```{r}
 cozy_rooms <- AB_NYC_2019 %>% 
   filter(borough == "Manhattan" , grepl( "Cozy | cozy" , name)) 
 
@@ -80,7 +80,7 @@ The table above shows that words such as “cozy” and “luxury” are associa
 
 So, the question now becomes, what makes up the most expensive AirBnb listings? Well, we narrowed down the top 40 most expensive listings into a graph, so that we can see if specific location makes a difference in price. The blue points represent full homes/apartments, while grey points represent a private room in an apartment. 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
 
 top_listings <- AB_NYC_2019 %>% filter(minimum_nights <5) %>% top_n(n = 40, wt = price) %>% arrange(desc(price))
 
