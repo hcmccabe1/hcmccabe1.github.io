@@ -4,7 +4,7 @@
 library(tidyverse)
 library(data.table)
 library(leaflet)
-AB_NYC_2019 <- read_csv("https://raw.githubusercontent.com/hcmccabe1/hcmccabe1.github.io/main/AB_NYC_2019.csv") 
+AB_NYC_2019 <- read_csv("AB_NYC_2019.csv") 
 AB_NYC_2019 <- rename(AB_NYC_2019, borough = neighbourhood_group)
 ```
 
